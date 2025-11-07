@@ -1,0 +1,31 @@
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+nav {
+    margin-top: 10px;
+    padding: 10px 0;
+    background-color: #ffffff;
+    text-align: center;
+    justify-content: center;
+}
+nav a {
+    color: #6bb5ff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
