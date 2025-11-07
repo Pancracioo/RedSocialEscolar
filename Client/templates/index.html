@@ -1,12 +1,7 @@
 
 {% extends "layouts/base.html" %}
 {% load static %}
-{% block extra_head %}
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-{% endblock %}
-
-{% block title %}Iniciar Sesión{% endblock %}
-
+{% block title %}Nombre - Inicio{% endblock %}
 {% block content %}
 
 {% if user.is_authenticated %}
@@ -20,7 +15,6 @@
     </div>
 </div>
 {% else %}
-
 <main>
 <div class="container" style="max-width: 1200px; margin-top: 5%;">
     <div class="row">

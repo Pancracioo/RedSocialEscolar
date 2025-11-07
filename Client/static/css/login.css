@@ -29,12 +29,54 @@ a:hover{
         border-bottom-right-radius: .3rem;
     }
 }
-
-
 .divider:after,
 .divider:before {
 content: "";
 flex: 1;
 height: 1px;
 background: #eee;
+}
+
+.divider {
+display: flex;
+align-items: center;
+text-align: center;
+}
+.margin-top-1 {
+    margin-top: 1rem;
+}
+.margin-bottom-1 {
+    margin-bottom: 1rem;
+}
+.margin-bottom-4 {
+    margin-bottom: 4rem;
+}
+.input-group-text {
+    background-color: #0072ff;
+    color: #ffffff;
+    border: none;
+}
+.input-group-text:hover {
+    background-color: #0056cc;
+    color: #ffffff;
+}
+.form-control:focus {
+    border-color: #0072ff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.btn-primary {
+    background-color: #0072ff;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #0056cc;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
 }
