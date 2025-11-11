@@ -2,8 +2,8 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 {% block title %}Nombre - Inicio{% endblock %}
+{% block extra_head %} <link rel="stylesheet" href="{% static 'css/index.css' %}">  {% endblock %}
 {% block content %}
-
 {% if user.is_authenticated %}
 <div class="container">
     <div class="row justify-content-center align-items-center min-vh-100">
@@ -15,85 +15,200 @@
     </div>
 </div>
 {% else %}
-<main>
-<div class="container" style="max-width: 1200px; margin-top: 5%;">
-    <div class="row">
-        <!-- Navigation -->
-        <aside class="col-md-3 d-none d-md-block">
-            <div class="sticky-top" style="top:20px;">
-                <div class="mb-4">
-                    <img src="{% static 'images/logo.avif' %}" alt="Logo" style="width:128px;">
-                <nav class="nav flex-column">
-                    <a class="nav-link fs-5 fw-bold text-dark" href="#"><i class="fas fa-home"></i> Inicio</a>
-                    <a class="nav-link fs-5 text-dark" href="#"><i class="fas fa-compass"></i> Explorar</a>
-                    <a class="nav-link fs-5 text-dark" href="#"><i class="fas fa-bell"></i> Notificaciones</a>
-                    <a class="nav-link fs-5 text-dark" href="#"><i class="fas fa-envelope"></i> Grupos</a>
-                    <a class="nav-link fs-5 text-dark" href="#"><i class="fas fa-bookmark"></i> Guardados</a>
-                </nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <!--<i class="bi bi-book-half"></i>-->
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Nombre institución
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="bi bi-house-fill"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-people-fill"></i> Compañeros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-calendar-event"></i> Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-journal-text"></i> Tareas</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3">
+                    <input class="form-control rounded-pill" type="search" placeholder="Buscar..." aria-label="Buscar">
+                </form>
+                <div class="d-flex align-items-center">
+                    <div class="position-relative me-3">
+                        <i class="bi bi-bell-fill fs-5"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="position-relative">
+                        <i class="bi bi-chat-dots-fill fs-5"></i>
+                        <span class="notification-badge">5</span>
+                    </div>
+                </div>
             </div>
-        </aside>
-
-        <!-- Center feed -->
-        <section class="col-12 col-md-6">
-            <!-- Posts -->
-            <div class="mt-3">
-
-               {# {% for post in posts %} #}
-                <article class="card mb-3">
-                    <div class="card-body d-flex">
-                        <img src="{% static 'images/avatar-placeholder.png' %}" class="rounded-circle me-3" width="48" height="48" alt="avatar">
-                        <div>
-                            <h6 class="mb-1" style="font-family: 'Roboto', sans-serif;">Usuario Ejemplo <small class="text-muted">· 2h</small></h6>
-                            <p class="mb-1" style="font-family: 'Open Sans', sans-serif;">Este es un ejemplo de publicación para mostrar cómo se vería el feed en la página principal.</p>
-                            <div class="text-muted small">
-                                <span class="me-3"><i class="fas fa-heart"></i> 12</span>
-                                <span class="me-3"><i class="fas fa-retweet"></i> 3</span>
-                                <span><i class="fas fa-comment"></i> 4</span>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="main-container container mt-5 pt-4">
+        <div class="row">
+            <!-- Left Sidebar -->
+            <div class="col-lg-3 col-md-4 mb-4">
+                <!-- Profile Card -->
+                <div class="card profile-card">
+                    <div class="card-body text-center">
+                        <img src="https://ui-avatars.com/api/?name=Maria+Lopez&background=random&size=80" alt="Profile" class="profile-img mb-3">
+                        <h5 class="card-title mb-1">María López</h5>
+                        <p class="mb-2"><small>Estudiante de 10mo Grado</small></p>
+                        <div class="d-flex justify-content-around mt-3">
+                            <div>
+                                <strong>142</strong>
+                                <p class="mb-0"><small>Amigos</small></p>
+                            </div>
+                            <div>
+                                <strong>28</strong>
+                                <p class="mb-0"><small>Posts</small></p>
                             </div>
                         </div>
                     </div>
-                </article>
-                {# {% endfor %} #}
-            </div>
-        </section>
-
-        <!-- Right sidebar -->
-        <aside class="col-md-3 d-none d-md-block">
-            <div class="sticky-top" style="top:20px;">
-                <div class="card mb-3 p-3">
-                    <h6 class="mb-2" style="font-family: 'Roboto', sans-serif;">Temas del momento</h6>
-                    <ul class="list-unstyled small mb-0">
-                        <li class="mb-2"><a href="#" class="text-decoration-none">#SemanaTec</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none">#ProyectoFinal</a></li>
-                        <li><a href="#" class="text-decoration-none">#NoticiasEscolares</a></li>
-                    </ul>
                 </div>
-
-                <div class="card p-3">
-                    <h6 class="mb-2" style="font-family: 'Roboto', sans-serif;">Grupos</h6>
-                    <div class="d-flex align-items-center mb-2">
-                        <img src="{% static 'images/avatar-placeholder.png' %}" width="40" height="40" class="rounded-circle me-2" alt="">
-                        <div class="flex-grow-1">
-                            <strong>Compañero A</strong>
-                            <div class="small text-muted">@companea</div>
+                <!-- Quick Access -->
+                <div class="card quick-access">
+                    <div class="card-body">
+                        <h6 class="card-title mb-3">Acceso Rápido</h6>
+                        <div class="quick-access-item">
+                            <i class="bi bi-bookmark-fill text-primary"></i> Guardados
                         </div>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Seguir</a>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <img src="{% static 'images/avatar-placeholder.png' %}" width="40" height="40" class="rounded-circle me-2" alt="">
-                        <div class="flex-grow-1">
-                            <strong>Profesor B</strong>
-                            <div class="small text-muted">@profb</div>
+                        <div class="quick-access-item">
+                            <i class="bi bi-clock-history text-warning"></i> Historial
                         </div>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Seguir</a>
+                        <div class="quick-access-item">
+                            <i class="bi bi-trophy-fill text-success"></i> Logros
+                        </div>
+                        <div class="quick-access-item">
+                            <i class="bi bi-gear-fill text-secondary"></i> Configuración
+                        </div>
                     </div>
                 </div>
             </div>
-        </aside>
+
+            <!-- Main Feed -->
+            <div class="col-lg-6 col-md-8 mb-4">
+                <!-- Create Post -->
+                <div class="card post-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://ui-avatars.com/api/?name=Maria+Lopez&background=random&size=45" alt="Profile" class="me-2 rounded-circle">
+                            <input type="text" class="form-control rounded-pill" placeholder="¿Qué estás pensando, María?">
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-light"><i class="bi bi-image text-success"></i> Foto</button>
+                            <button class="btn btn-light"><i class="bi bi-emoji-smile text-warning"></i> Sentimiento</button>
+                            <button class="btn btn-light"><i class="bi bi-calendar-event text-primary"></i> Evento</button>
+                        </div>
+                    </div>
+                </div>
+
+                {% for post in posts|slice:":10" %}
+                <!-- Post -->
+                <div class="card post-card">
+                    <div class="card-body">
+                        <div class="post-header d-flex align-items-center mb-3">
+                            <img src="https://ui-avatars.com/api/?name=Carlos+Ramirez&background=random&size=45" alt="User" class="rounded-circle">
+                                <div class="ms-3">
+                                    <h6 class="mb-0">{{ post.author }}</h6>
+                                        <small class="text-muted">{{ post.created_at|timesince }} atrás • <i class="bi bi-globe"></i></small>
+                                            </div>
+                                                <div class="ms-auto">
+                                                <i class="bi bi-three-dots"></i>
+                                            </div>
+                                    </div>
+                                <p class="card-text">{{ post.content }}</p>
+                                    <img src="{{ post.image.url }}" class="img-fluid rounded mb-3" alt="Post">
+                                        <div class="d-flex justify-content-between text-muted mb-2">
+                                            <span><i class="bi bi-heart-fill text-danger"></i> {{ post.likes }} Me gusta</span>
+                                            <span>{{ post.comments }} Comentarios</span>
+                                        </div>
+                                        <hr>
+                                    <div class="post-actions d-flex justify-content-around">
+                                        <button class="btn btn-link"><i class="bi bi-heart"></i> Me gusta</button>
+                                        <button class="btn btn-link"><i class="bi bi-chat"></i> Comentar</button>
+                                        <button class="btn btn-link"><i class="bi bi-share"></i> Compartir</button>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                        <div class="col-lg-3">
+            <!-- Right Sidebar -->
+                <!-- Trending Topics -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h6 class="card-title mb-3">Tendencias</h6>
+                        <span class="trending-tag">#ExamenFinal</span>
+                        <span class="trending-tag">#FeriaCiencias</span>
+                        <span class="trending-tag">#DeportesEscolares</span>
+                        <span class="trending-tag">#ClubLectura</span>
+                    </div>
+                </div>
+                <!-- Upcoming Events -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h6 class="card-title mb-3">Próximos Eventos</h6>
+                        <div class="d-flex mb-3">
+                            <div class="bg-primary text-white rounded p-2 me-3 text-center" style="width: 50px;">
+                                <div><strong>15</strong></div>
+                                <small>NOV</small>
+                            </div>
+                            <div>
+                                <strong>Día del Deporte</strong>
+                                <p class="mb-0 text-muted small">9:00 AM - Cancha Principal</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="bg-success text-white rounded p-2 me-3 text-center" style="width: 50px;">
+                                <div><strong>20</strong></div>
+                                <small>NOV</small>
+                            </div>
+                            <div>
+                                <strong>Festival Cultural</strong>
+                                <p class="mb-0 text-muted small">2:00 PM - Auditorio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Suggested Friends -->
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title mb-3">Amigos Sugeridos</h6>
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://ui-avatars.com/api/?name=Luis+Torres&background=random&size=40" class="rounded-circle me-2" alt="User">
+                            <div class="flex-grow-1">
+                                <strong>Luis Torres</strong>
+                                <p class="mb-0 text-muted small">11vo Grado</p>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Agregar</button>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="https://ui-avatars.com/api/?name=Sofia+Gomez&background=random&size=40" class="rounded-circle me-2" alt="User">
+                            <div class="flex-grow-1">
+                                <strong>Sofía Gómez</strong>
+                                <p class="mb-0 text-muted small">10mo Grado</p>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</main>
-
 {% endif %}
 {% endblock %}

@@ -1,3 +1,43 @@
+
+:root {  
+    /* Colores principales */
+    --primary-color: #1d7fff;
+    --secondary-color: #ff7316;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+            
+            /* Colores de fondo */
+            --bg-main: #f0f2f5;
+            --card-bg: #ffffff;
+            --navbar-bg: rgba(255, 255, 255, 0.98);
+            
+            /* Colores de texto */
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --text-muted: #adb5bd;
+            --text-white: #ffffff;
+            
+            /* Colores de hover */
+            --hover-bg: #f8f9fa;
+            --hover-light: #e9ecef;
+            
+            /* Fuentes */
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Quicksand', sans-serif;
+            
+            /* Espaciados */
+            --border-radius: 15px;
+            --border-radius-small: 10px;
+            --border-radius-pill: 25px;
+            --border-radius-circle: 50%;
+            
+            /* Sombras */
+            --shadow-sm: 0 2px 20px rgba(0,0,0,0.1);
+            --shadow-md: 0 5px 15px rgba(0,0,0,0.08);
+            --shadow-hover: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
 .gradient-custom-2 {
     /* fallback for old browsers */
     background: #a1c4fd;
@@ -29,10 +69,24 @@ a:hover{
         border-bottom-right-radius: .3rem;
     }
 }
-.divider:after,
-.divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
+    .divider:after,
+    .divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
 }
+
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            border-radius: var(--border-radius-pill);
+            padding: 10px 30px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+            background: var(--secondary-color);
+        }
