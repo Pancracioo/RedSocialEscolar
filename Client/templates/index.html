@@ -117,34 +117,35 @@
                     </div>
                 </div>
 
-                {% for post in posts|slice:":10" %}
+               {#  {% for post in posts|slice:":10" %} #}
                 <!-- Post -->
+                {% for char in '......' %}
                 <div class="card post-card">
                     <div class="card-body">
                         <div class="post-header d-flex align-items-center mb-3">
-                            <img src="https://ui-avatars.com/api/?name=Carlos+Ramirez&background=random&size=45" alt="User" class="rounded-circle">
-                                <div class="ms-3">
-                                    <h6 class="mb-0">{{ post.author }}</h6>
-                                        <small class="text-muted">{{ post.created_at|timesince }} atrás • <i class="bi bi-globe"></i></small>
-                                            </div>
-                                                <div class="ms-auto">
-                                                <i class="bi bi-three-dots"></i>
-                                            </div>
-                                    </div>
-                                <p class="card-text">{{ post.content }}</p>
-                                    <img src="{{ post.image.url }}" class="img-fluid rounded mb-3" alt="Post">
-                                        <div class="d-flex justify-content-between text-muted mb-2">
-                                            <span><i class="bi bi-heart-fill text-danger"></i> {{ post.likes }} Me gusta</span>
-                                            <span>{{ post.comments }} Comentarios</span>
-                                        </div>
-                                        <hr>
-                                    <div class="post-actions d-flex justify-content-around">
-                                        <button class="btn btn-link"><i class="bi bi-heart"></i> Me gusta</button>
-                                        <button class="btn btn-link"><i class="bi bi-chat"></i> Comentar</button>
-                                        <button class="btn btn-link"><i class="bi bi-share"></i> Compartir</button>
-                                    </div>
-                                </div>
+                            <img src="https://ui-avatars.com/api/?name=Carlos+Ramirez&background=random&size=45" alt="User">
+                            <div class="ms-3">
+                                <h6 class="mb-0">Carlos Ramírez</h6>
+                                <small class="text-muted">Hace 2 horas • <i class="bi bi-globe"></i></small>
                             </div>
+                            <div class="ms-auto">
+                                <i class="bi bi-three-dots"></i>
+                            </div>
+                        </div>
+                        <p class="card-text">¡Feliz de anunciar que nuestro equipo ganó el primer lugar en la feria de ciencias! 🏆 Gracias a todos por el apoyo.</p>
+                        <img src="https://picsum.photos/600/400?random=1" class="img-fluid rounded mb-3" alt="Post">
+                        <div class="d-flex justify-content-between text-muted mb-2">
+                            <span><i class="bi bi-heart-fill text-danger"></i> 45 Me gusta</span>
+                            <span>12 Comentarios</span>
+                        </div>
+                        <hr>
+                        <div class="post-actions d-flex justify-content-around">
+                            <button><i class="bi bi-heart"></i> Me gusta</button>
+                            <button><i class="bi bi-chat"></i> Comentar</button>
+                            <button><i class="bi bi-share"></i> Compartir</button>
+                        </div>
+                    </div>
+                </div>
                         {% endfor %}
                     </div>
                         <div class="col-lg-3">
