@@ -5,16 +5,23 @@
 {% block extra_head %} <link rel="stylesheet" href="{% static 'css/index.css' %}">  {% endblock %}
 {% block content %}
 
+
 {% if user.is_authenticated %}
-<div class="container">
-    <div class="row justify-content-center align-items-center min-vh-100">
-        <div class="col-md-6 text-center">
-            <h1 class="mb-4">Bienvenido a la Red Social Escolar</h1>
-            <p class="mb-4">Conéctate con tus compañeros y comparte tus experiencias.</p>
-            <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Iniciar Sesión</a>
+<div class="card welcome-card mx-auto my-5" style="max-width: 900px;">
+    <div class="row g-0 align-items-center">
+        <div class="col-md-12 p-4 text-center">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" width="48" class="mb-3">
+            <h1 class="mb-3">Bienvenido a la Red Social Escolar</h1>
+            <p class="lead mb-4">Conéctate con tus compañeros, comparte tus experiencias y participa en eventos de tu institución.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-sm-2">Iniciar Sesión</a>
+            </div>
+            <p class="text-muted small mt-3">Al registrarte aceptas nuestros <a href="#">Términos</a> y la <a href="#">Política de Privacidad</a>.</p>
         </div>
     </div>
 </div>
+
+
 {% else %}
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -136,7 +143,7 @@
                         <p class="card-text">Descripción del post Imagen random de ejemplo</p>
                         <img src="https://picsum.photos/600/400?random=1" class="img-fluid rounded mb-3" alt="{nombre usuario}, en {nombre institución}">
                         <div class="d-flex justify-content-between text-muted mb-2">
-                            <span><i class="bi bi-heart-fill text-danger"></i> num. likes/span>
+                            <span><i class="bi bi-heart-fill text-danger"></i> num. likes </span>
                             <span>num. comentarios</span>
                         </div>
                         <hr>
