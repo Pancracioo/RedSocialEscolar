@@ -1,0 +1,44 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/terms.css' %}">
+{% endblock %}
+
+{% block title %}Términos y Condiciones{% endblock %}
+
+{% block content %}
+
+<section class="terms-section">
+    <div class="container my-5">
+        <h1 class="mb-4">Términos y Condiciones</h1>
+        <p>Bienvenido a nuestra Red Social Escolar. Al utilizar nuestra plataforma, aceptas cumplir con los siguientes términos y condiciones:</p>
+
+        <h5>1. Uso de la Plataforma</h5>
+        <p>La plataforma está destinada exclusivamente para uso educativo y social dentro de la comunidad escolar. Cualquier uso indebido puede resultar en la suspensión o eliminación de tu cuenta.
+            {% lorem 9 b random %}
+        </p>
+        <h5>2. Privacidad</h5>
+        <p>Nos comprometemos a proteger tu privacidad. Consulta nuestra <a href="{% url 'privacy_policy' %}">Política de Privacidad</a> para obtener más información sobre cómo manejamos tus datos personales.
+        {% lorem 1 b random %}
+        </p>
+
+        <h5>3. Contenido Generado por el Usuario</h5>
+        <p>Eres responsable del contenido que publiques en la plataforma. No se permite contenido ofensivo, ilegal o que infrinja los derechos de terceros.
+            {% lorem 4 b random %}
+        </p>
+
+        <h5>4. Modificaciones a los Términos</h5>
+        <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Te notificaremos sobre cualquier cambio significativo.
+            {% lorem 1 b random %}
+        </p>
+
+        <h5>5. Contacto</h5>
+        <p>Si tienes alguna pregunta sobre estos términos, no dudes en contactarnos a través de nuestro formulario de contacto.</p>
+        <p>Gracias por ser parte de nuestra comunidad escolar.
+            {% lorem 3 b random %}
+        </p>
+    </div>
+</section>
+
+{% endblock %}
