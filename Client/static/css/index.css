@@ -1,23 +1,23 @@
         :root {
-            /* Colores principales */
+            /* Principales */
             --primary-color: #1d7fff;
             --secondary-color: #ff7316;
             --danger-color: #dc3545;
             --success-color: #28a745;
             --warning-color: #ffc107;
             
-            /* Colores de fondo */
+            /* Fondo */
             --bg-main: #f0f2f5;
             --card-bg: #ffffff;
             --navbar-bg: rgba(255, 255, 255, 0.98);
             
-            /* Colores de texto */
+            /* Texto */
             --text-primary: #212529;
             --text-secondary: #6c757d;
             --text-muted: #adb5bd;
             --text-white: #ffffff;
             
-            /* Colores de hover */
+            /* Hover */
             --hover-bg: #f8f9fa;
             --hover-light: #e9ecef;
             

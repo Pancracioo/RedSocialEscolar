@@ -6,7 +6,7 @@
 {% block content %}
 
 
-{% if not user.is_authenticated %}
+{% if user.is_authenticated %}
 <div class="card welcome-card mx-auto my-5" style="max-width: 900px;">
     <div class="row g-0 align-items-center">
         <div class="col-md-12 p-4 text-center">
@@ -93,7 +93,24 @@
                     <div class="card-body">
                         <h6 class="card-title mb-3">Acceso Rápido</h6>
                         <div class="quick-access-item">
-                            <i class="bi bi-bookmark-fill text-primary"></i> Grupos
+                            <i class="bi bi-bookmark-fill text-primary"></i> Guardados
+                        </div>
+                        <div class="quick-access-item">
+                            <i class="bi bi-clock-history text-warning"></i> Historial
+                        </div>
+                        <div class="quick-access-item">
+                            <i class="bi bi-trophy-fill text-success"></i> Logros
+                        </div>
+                        <div class="quick-access-item">
+                            <i class="bi bi-gear-fill text-secondary"></i> Configuración
+                        </div>
+                    </div>
+                </div>
+                <div class="card quick-access">
+                    <div class="card-body">
+                        <h6 class="card-title mb-3">Grupos</h6>
+                        <div class="quick-access-item">
+                            <i class="bi bi-bookmark-fill text-primary"></i> Guardados
                         </div>
                         <div class="quick-access-item">
                             <i class="bi bi-clock-history text-warning"></i> Historial
