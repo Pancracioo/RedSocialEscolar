@@ -1,0 +1,279 @@
+
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %}Nombre - Inicio{% endblock %}
+{% block extra_head %} <link rel="stylesheet" href="{% static 'css/index.css' %}">  {% endblock %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="card welcome-card mx-auto my-5" style="max-width: 900px;">
+    <div class="row g-0 align-items-center">
+        <div class="col-md-12 p-4 text-center">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" width="128" class="mb-3">
+            <h1 class="mb-3">Bienvenido a la Red Social Escolar</h1>
+            <p class="lead mb-4">Conéctate con tus compañeros, comparte tus experiencias y participa en eventos de tu institución.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-sm-2">Iniciar Sesión</a>
+            </div>
+            <p class="text-muted small mt-3">Al registrarte aceptas nuestros <a href="#">Términos y la política de Privacidad </a>.</p>
+        </div>
+    </div>
+</div>
+
+
+{% else %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+            Nombre institución
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#"><i class="bi bi-house-fill"></i> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-people-fill"></i> Compañeros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-calendar-event"></i> Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-journal-text"></i> Tareas</a>
+                </li>
+            </ul>
+            <form class="d-flex me-3" role="search">
+                <input class="form-control rounded-pill" type="search" placeholder="Buscar..." aria-label="Buscar">
+            </form>
+            <div class="d-flex align-items-center">
+                <div class="position-relative me-3">
+                    <i class="bi bi-bell-fill fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                </div>
+                <div class="position-relative">
+                    <i class="bi bi-chat-dots-fill fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="main-container container mt-5 pt-4">
+    <div class="row">
+        <!-- Left Sidebar -->
+        <div class="col-lg-3 col-md-4 mb-4">
+            <div class="static-aside">
+
+            <!-- Profile Card -->
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <img src="https://ui-avatars.com/api/?name=Maria+Lopez&background=random&size=80" alt="Profile" class="rounded-circle mb-3" width="80" height="80">
+                    <h5 class="card-title mb-1">María López</h5>
+                    <p class="mb-2"><small>Estudiante de 10mo Grado</small></p>
+                    <div class="d-flex justify-content-around mt-3">
+                        <div>
+                            <strong>100</strong>
+                            <p class="mb-0"><small>Amigos</small></p>
+                        </div>
+                        <div>
+                            <strong>20</strong>
+                            <p class="mb-0"><small>Posts</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Navigation Links -->
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title mb-3">Navegación</h6>
+                        <div class="mb-2">
+                            <a href="#">
+                            <i class="bi bi-house-fill text-primary"></i> Inicio
+                            </a>
+                        </div>
+                        <div class="mb-2">
+                            <a href="#">
+                            <i class="bi bi-bell-fill text-info"></i> Notificaciones
+                            </a>
+                        </div>
+                        <div class="mb-2">
+                            <a href="#">
+                            <i class="bi bi-people-fill text-success"></i> Compañeros
+                            </a>
+                        </div>
+                        <div class="mb-2">
+                            <a href="#">
+                            <i class="bi bi-calendar-event text-warning"></i> Eventos
+                            </a>
+                        </div>
+                        <div class="mb-2">
+                            <a href="#">
+                                <i class="bi bi-journal-text text-danger"></i> Tareas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Navigation Links -->
+        </div>
+
+        <!-- Main Feed -->
+        <div class="col-lg-6 col-md-8 mb-4">
+            <!-- Create Post -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://ui-avatars.com/api/?name=Maria+Lopez&background=random&size=45" alt="Profile" class="me-2 rounded-circle" width="45" height="45">
+                        <input type="text" class="form-control rounded-pill" placeholder="¿Qué estás pensando, María?">
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-light"><i class="bi bi-image text-success"></i> Media</button>
+                        <button class="btn btn-light"><i class="bi bi-link-45deg text-warning"></i> Enlace</button>
+                        <button class="btn btn-light"><i class="bi bi-calendar-event text-primary"></i> Evento</button>
+                    </div>
+                </div>
+            </div>
+
+            {% for char in '......' %}
+            <!-- Post -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://ui-avatars.com/api/?name=Carlos+Ramirez&background=random&size=45" alt="User" class="rounded-circle" width="45" height="45">
+                        <div class="ms-3">
+                            <h6 class="mb-0">Carlos Ramírez</h6>
+                            <small class="text-muted">Hace 2 horas • <i class="bi bi-globe"></i></small>
+                        </div>
+                        <div class="ms-auto">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                    <p class="card-text">Descripción del post Imagen random de ejemplo</p>
+                    <img src="https://picsum.photos/600/400?random=1" class="img-fluid rounded mb-3" alt="{nombre usuario}, en {nombre institución}">
+                    <div class="d-flex justify-content-between text-muted mb-2">
+                        <span><i class="bi bi-heart-fill text-danger"></i> num. likes </span>
+                        <span>num. comentarios</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-heart"></i> Me gusta</button>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-chat"></i> Comentar</button>
+                        <button class="btn btn-sm btn-outline-success"><i class="bi bi-share"></i> Compartir</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <!-- Trending Topics -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h6 class="card-title mb-3">Topics</h6>
+                    <div class="mb-2"><span class="badge bg-secondary">#mandragora</span></div>
+                    <div class="mb-2"><span class="badge bg-secondary">#gasolina</span></div>
+                    <div class="mb-2"><span class="badge bg-secondary">#motoconcho</span></div>
+                    <div><span class="badge bg-secondary">#ciberseguridad</span></div>
+                </div>
+            </div>
+
+        <!-- Groups -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h6 class="card-title mb-3">Grupos</h6>
+                    <div class="mb-2">
+                        <i class="bi bi-people-fill text-primary"></i> Mis Grupos
+                    </div>
+                    <div class="mb-2">
+                        <i class="bi bi-plus-circle text-success"></i> Crear Grupo
+                    </div>
+                    <div>
+                        <i class="bi bi-search text-secondary"></i> Buscar Grupos
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h6 class="card-title mb-3">Acceso Rápido</h6>
+                    <div class="mb-2">
+                        <i class="bi bi-bookmark-fill text-primary"></i> Guardados
+                    </div>
+                    <div class="mb-2">
+                        <i class="bi bi-clock-history text-warning"></i> Historial
+                    </div>
+                    <div class="mb-2">
+                        <i class="bi bi-trophy-fill text-success"></i> Logros
+                    </div>
+                    <div>
+                        <i class="bi bi-gear-fill text-secondary"></i> Configuración
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h6 class="card-title mb-3">Próximos Eventos | conectar con google calendar</h6>
+                    <div class="d-flex mb-3">
+                        <div class="bg-primary text-white rounded p-2 me-3 text-center" style="width: 50px;">
+                            <div><strong>15</strong></div>
+                            <small>NOV</small>
+                        </div>
+                        <div>
+                            <strong>Día del Deporte</strong>
+                            <p class="mb-0 text-muted small">9:00 AM - Cancha Principal</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-1">
+                        <div class="bg-success text-white rounded p-2 me-3 text-center" style="width: 50px;">
+                            <div><strong>20</strong></div>
+                            <small>NOV</small>
+                        </div>
+                        <div>
+                            <strong>Festival Cultural</strong>
+                            <p class="mb-0 text-muted small">2:00 PM - Auditorio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggested Friends -->
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title mb-3">Amigos Sugeridos</h6>
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://ui-avatars.com/api/?name=Luis+Torres&background=random&size=40" class="rounded-circle me-2" alt="User" width="40" height="40">
+                        <div class="flex-grow-1">
+                            <strong>Luis Torres</strong>
+                            <p class="mb-0 text-muted small">11vo Grado</p>
+                        </div>
+                        <button class="btn btn-sm btn-primary">Agregar</button>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="https://ui-avatars.com/api/?name=Sofia+Gomez&background=random&size=40" class="rounded-circle me-2" alt="User" width="40" height="40">
+                        <div class="flex-grow-1">
+                            <strong>Sofía Gómez</strong>
+                            <p class="mb-0 text-muted small">10mo Grado</p>
+                        </div>
+                        <button class="btn btn-sm btn-primary">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
