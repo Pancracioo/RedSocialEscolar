@@ -5,12 +5,12 @@
 {% block extra_head %} <link rel="stylesheet" href="{% static 'css/index.css' %}">  {% endblock %}
 {% block content %}
 
-{% if user.is_authenticated %}
+{% if  not user.is_authenticated %}
 <div class="card welcome-card mx-auto my-5" style="max-width: 900px;">
     <div class="row g-0 align-items-center">
         <div class="col-md-12 p-4 text-center">
             <img src="{% static 'images/logo.png' %}" alt="Logo" width="128" class="mb-3">
-            <h1 class="mb-3">Bienvenido a la Red Social Escolar</h1>
+            <h1 class="mb-3">Bienvenido a la intitución</h1>
             <p class="lead mb-4">Conéctate con tus compañeros, comparte tus experiencias y participa en eventos de tu institución.</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-sm-2">Iniciar Sesión</a>
